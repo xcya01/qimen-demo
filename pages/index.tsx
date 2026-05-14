@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Head from 'next/head'
-import '../styles/globals.css'
 
 const JIXI_COLORS: Record<string, string> = {
   '吉': 'jx-ji',
