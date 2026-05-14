@@ -199,4 +199,4 @@ function calculateQimen(dtStr, plateType = "event") {
   };
 }
 
-module.exports = { calculateQimen };
+export { calculateQimen };
