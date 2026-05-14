@@ -67,7 +67,7 @@ function calcYinYang(y, mo, d, hour) {
 }
 
 function calculateQimen(dtStr, plateType = "event") {
-  const [dp, tp] = dtStr.split(" ");
+  const [dp, tp] = dtStr.replace("T", " ").split(" ");
   const [year, month, day] = dp.split("-").map(Number);
   const [hour] = tp.split(":").map(Number);
 
