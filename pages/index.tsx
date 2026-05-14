@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
 import '../styles/globals.css'
 
@@ -38,11 +38,7 @@ interface QimenResult {
   '驿马': { '支': string; '宫': number }
   '宫位': Palace[]
   'datetime': string
-}
-
-const PALACE_NAMES: Record<number, string> = {
-  1: '坎一宫', 2: '坤二宫', 3: '震三宫', 4: '巽四宫',
-  5: '中五宫', 6: '乾六宫', 7: '兑七宫', 8: '艮八宫', 9: '离九宫'
+  'plate_type': string
 }
 
 export default function Home() {
@@ -96,7 +92,6 @@ export default function Home() {
       </div>
 
       <main className="main">
-        {/* Form */}
         <div className="form-card">
           <div className="form-title">输入信息</div>
           <div className="form-row">
@@ -124,14 +119,12 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Error */}
         {error && (
           <div className="form-card" style={{ color: '#dc2626', textAlign: 'center', padding: '1.5rem' }}>
             ⚠️ {error}
           </div>
         )}
 
-        {/* Result */}
         {result && (
           <div className="result-card">
             <div className="result-header">
@@ -170,19 +163,15 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 9 Palace Grid */}
             <div className="palace-grid">
-              {/* Row 1: 4(巽) 5(中) 9(离) */}
               <PalaceCell palace={palaces.find(p => p['宫'] === 4)} />
               <CenterCell />
               <PalaceCell palace={palaces.find(p => p['宫'] === 9)} />
 
-              {/* Row 2: 3(震) 6(乾) */}
               <PalaceCell palace={palaces.find(p => p['宫'] === 3)} />
               <PalaceCell palace={palaces.find(p => p['宫'] === 6)} />
               <PalaceCell palace={palaces.find(p => p['宫'] === 7)} />
 
-              {/* Row 3: 8(艮) 2(坤) 1(坎) */}
               <PalaceCell palace={palaces.find(p => p['宫'] === 8)} />
               <PalaceCell palace={palaces.find(p => p['宫'] === 2)} />
               <PalaceCell palace={palaces.find(p => p['宫'] === 1)} />
@@ -190,7 +179,6 @@ export default function Home() {
           </div>
         )}
 
-        {/* Empty state */}
         {!result && !loading && !error && (
           <div className="result-card">
             <div className="empty-state">
