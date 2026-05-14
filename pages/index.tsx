@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Head from 'next/head'
-import '../styles/globals.css'
 
 const JIXI_COLORS: Record<string, string> = { '吉': 'jx-ji', '凶': 'jx-xiong', '中': 'jx-zhong' }
 interface Palace { '宫': number; '方位': string; '方向': string; '地支': string; '天盘': string; '地盘': string; '神': string; '星': string; '星吉凶': string; '星五行': string; '门': string; '门吉凶': string; '门五行': string; '五行': string; '空亡': string; '先天数': string; '后天数': string; '尾数': string }
