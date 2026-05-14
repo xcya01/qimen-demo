@@ -414,10 +414,10 @@ input:focus, select:focus {
   color: var(--text-sub);
   line-height: 1.6;
 }
-.analysis-card { background: #1e1e2e; border-radius: 1rem; padding: 1.5rem; margin-top: 1.5rem; border: 1px solid rgba(197,160,89,0.27); }
-.analysis-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: #c5a059; }
-.analysis-row { padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.03); display: flex; gap: 0.5rem; font-size: 0.9rem; }
+.analysis-card { background: var(--card); border-radius: 1rem; padding: 1.5rem; margin-top: 1.5rem; border: 1px solid var(--accent-light); }
+.analysis-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent); }
+.analysis-row { padding: 0.5rem 0; border-bottom: 1px solid #f1f5f9; display: flex; gap: 0.5rem; font-size: 0.9rem; color: var(--text); }
 .analysis-row:last-child { border-bottom: none; }
-.analysis-label { color: #888; min-width: 80px; }
-.analysis-badge { display: inline-block; padding: 0.1rem 0.6rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.85rem; background: #c5a059; color: #000; }
-.analysis-row.highlight { background: rgba(197,160,89,0.07); border-radius: 0.5rem; padding: 0.8rem; margin-top: 0.5rem; }
+.analysis-label { color: var(--text-sub); min-width: 80px; }
+.analysis-badge { display: inline-block; padding: 0.1rem 0.6rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.85rem; background: var(--accent); color: var(--primary); }
+.analysis-row.highlight { background: var(--accent-light); border-radius: 0.5rem; padding: 0.8rem; margin-top: 0.5rem; }
