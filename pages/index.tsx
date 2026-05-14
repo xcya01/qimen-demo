@@ -8,7 +8,7 @@ interface Analysis { '整体格局': { level: string; comment: string }; '吉凶
 
 export default function Home() {
   const [datetime, setDatetime] = useState(() => { const n = new Date(); n.setMinutes(n.getMinutes() - n.getTimezoneOffset()); return n.toISOString().slice(0, 16) })
-  const [plateType, setPlateType] = useState('event')
+  const plateType = 'event'
   const [loading, setLoading] = useState(false)
   const [result, setResult] = useState<QimenResult | null>(null)
   const [analysis, setAnalysis] = useState<Analysis | null>(null)
@@ -34,14 +34,13 @@ export default function Home() {
           <div className="form-title">输入信息</div>
           <div className="form-row">
             <div className="form-group"><label>日期时间</label><input type="datetime-local" value={datetime} onChange={e => setDatetime(e.target.value)} /></div>
-            <div className="form-group"><label>盘类型</label><select value={plateType} onChange={e => setPlateType(e.target.value)}><option value="event">事件奇门</option><option value="birth">先天奇门</option></select></div>
           </div>
           <div className="btn-row"><button className="btn btn-primary" onClick={calc} disabled={loading}>{loading ? '排盘中...' : '起盘'}</button></div>
         </div>
         {error && <div className="form-card" style={{ color: '#dc2626', textAlign: 'center', padding: '1.5rem' }}>⚠️ {error}</div>}
         {result && (
           <div className="result-card">
-            <div className="result-header"><h2>奇门遁甲 · {result.局.type}{result.局.number}局</h2><div className="datetime">{result.datetime} · {result.plate_type === 'event' ? '事件奇门' : '先天奇门'}</div></div>
+            <div className="result-header"><h2>奇门遁甲 · {result.局.type}{result.局.number}局</h2><div className="datetime">{result.datetime}</div></div>
             <div className="result-meta">
               <div className="meta-item"><div className="meta-label">四柱</div><div className="meta-value">{result.四柱.年}</div><div className="meta-value accent">{result.四柱.月} {result.四柱.日} {result.四柱.时}</div></div>
               <div className="meta-item"><div className="meta-label">元</div><div className="meta-value">{result.局.yuan}</div></div>
